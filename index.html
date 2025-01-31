@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
     <style>
-        /* Tło strony z gradientem czerwono-białym */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -13,17 +12,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(to right, #ff0000, #ffffff); /* Gradient z czerwonego do białego */
-            min-height: 100vh; /* Minimalna wysokość, aby wypełnić całą stronę */
-            color: #333; /* Kolor tekstu */
+            background: linear-gradient(to right, #ff0000, #ffffff);
+            min-height: 100vh;
+            color: #333;
         }
 
         h1 {
             margin-bottom: 30px;
-            color: #ffffff; /* Kolor nagłówka na biały */
+            color: #ffffff;
         }
 
-        /* Kontener dla klienta */
         .client-container {
             display: flex;
             justify-content: center;
@@ -31,34 +29,31 @@
             margin-bottom: 20px;
             padding: 15px;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8); /* Lekko przezroczysty biały tło */
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Informacje o kliencie */
         .client-info {
             margin-right: 20px;
             text-align: left;
             font-size: 18px;
-            color: #333; /* Ciemny kolor tekstu dla lepszej widoczności */
+            color: #333;
         }
 
-        /* Przycisk */
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             margin: 10px;
             border: none;
-            background: linear-gradient(to right, #ff4d4d, #ff9999); /* Gradient przycisku od ciemniejszego do jaśniejszego czerwonego */
+            background: linear-gradient(to right, #ff4d4d, #ff9999);
             color: #fff;
             border-radius: 5px;
             transition: background 0.3s ease;
         }
 
-        /* Efekt na przycisku po najechaniu */
         button:hover {
-            background: linear-gradient(to right, #ff3333, #ff6666); /* Jaśniejszy czerwony podczas najechania */
+            background: linear-gradient(to right, #ff3333, #ff6666);
         }
     </style>
     <script>
@@ -71,17 +66,14 @@
                         const clientDiv = document.createElement('div');
                         clientDiv.className = 'client-container';
 
-                        // Client info
                         const clientInfo = document.createElement('div');
                         clientInfo.className = 'client-info';
                         clientInfo.innerHTML = `<h2>Client ID: ${client.id}</h2>`;
 
-                        // Remote button
                         const remoteButton = document.createElement('button');
                         remoteButton.textContent = 'Remote Button';
-                        remoteButton.onclick = () => window.location.href = `/remote?id=${client.id}`;
+                        remoteButton.onclick = () => window.location.href = `/remote.html?id=${client.id}`;
 
-                        // Append client info and button
                         clientDiv.appendChild(clientInfo);
                         clientDiv.appendChild(remoteButton);
                         container.appendChild(clientDiv);
