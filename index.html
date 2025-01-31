@@ -14,11 +14,34 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            margin: 10px;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.body;
+                    data.clients.forEach(client => {
+                        const clientDiv = document.createElement('div');
+                        clientDiv.id = `client_${client.id}`;
+                        clientDiv.innerHTML = `<h2>Client ID: ${client.id}</h2>`;
+
+                        const remoteButton = document.createElement('button');
+                        remoteButton.id = `remote_${client.id}`;
+                        remoteButton.textContent = 'Remote Button';
+                        remoteButton.onclick = () => alert(`Remote button clicked for client ${client.id}`);
+                        
+                        clientDiv.appendChild(remoteButton);
+                        container.appendChild(clientDiv);
+                    });
+                })
+                .catch(error => console.error('Error loading data:', error));
+        });
+    </script>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <button onclick="alert('Button Clicked!')">Click Me</button>
+    <h1>Clients:</h1>
 </body>
 </html>
