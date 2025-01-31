@@ -1,0 +1,16 @@
+{
+    "clients": [
+        {
+            "id": 1,
+            "remote_address": "Unkown"
+        },
+        {
+            "id": 2,
+            "remote_address": "Unkown"
+        },
+        {
+            "id": 3,
+            "remote_address": "Unkown"
+        }
+    ]
+}
